@@ -1,0 +1,182 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-4);
+  animation: fadeIn 120ms ease;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 150ms ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-5) 0;
+  gap: var(--space-4);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-tertiary);
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.closeBtn:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.content {
+  padding: var(--space-4) var(--space-5);
+}
+
+.message {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.cancelBtn,
+.deleteBtn {
+  flex: 1;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.cancelBtn {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.cancelBtn:hover {
+  background-color: var(--color-border);
+}
+
+.deleteBtn {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.deleteBtn:hover {
+  opacity: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .overlay {
+    padding: var(--space-3) var(--space-3) 0;
+    align-items: flex-end;
+  }
+
+  .modal {
+    max-width: 100%;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    animation: slideUpMobile 200ms ease;
+  }
+
+  @keyframes slideUpMobile {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .header {
+    padding: var(--space-4) var(--space-4) 0;
+  }
+
+  .title {
+    font-size: var(--font-size-base);
+  }
+
+  .closeBtn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .content {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .message {
+    font-size: var(--font-size-xs);
+  }
+
+  .actions {
+    padding: 0 var(--space-4) var(--space-4);
+    flex-direction: column-reverse;
+  }
+
+  .cancelBtn,
+  .deleteBtn {
+    width: 100%;
+    padding: var(--space-3);
+  }
+}

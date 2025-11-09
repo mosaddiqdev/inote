@@ -1,0 +1,129 @@
+.note {
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: padding var(--transition);
+  will-change: padding;
+  cursor: pointer;
+}
+
+.note:hover {
+  padding-left: var(--space-2);
+}
+
+.noteLast {
+  border-bottom: none;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  flex: 1;
+  color: var(--color-text);
+}
+
+.deleteBtn {
+  padding: var(--space-2);
+  color: var(--color-text-tertiary);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  flex-shrink: 0;
+  margin-top: -4px;
+}
+
+.deleteBtn:hover {
+  color: var(--color-accent);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.content {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+  white-space: pre-wrap;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag {
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+.time {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .note {
+    padding: var(--space-6) 0;
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .note {
+    padding: var(--space-5) 0;
+  }
+
+  .header {
+    margin-bottom: var(--space-3);
+  }
+
+  .title {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+
+  .deleteBtn {
+    padding: var(--space-1);
+  }
+
+  .content {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .time {
+    width: 100%;
+    text-align: left;
+  }
+}
