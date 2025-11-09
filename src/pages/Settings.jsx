@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Moon, Sun, Download, Upload, Trash2, Info } from 'lucide-react';
+import { ArrowLeft, Moon, Sun, Download, Upload, Trash2, Info, Github } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLocalStorage } from '../hooks/useLocalStorage';
@@ -176,6 +176,16 @@ export default function Settings() {
             <h2 className={styles.sectionTitle}>About</h2>
             
             <div className={styles.about}>
+              <a 
+                href="https://github.com/mosaddiqdev/inote" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.githubIcon}
+                aria-label="View on GitHub"
+              >
+                <Github size={18} />
+              </a>
+
               <div className={styles.appName}>iNote</div>
               <div className={styles.version}>Version 1.0.0</div>
               

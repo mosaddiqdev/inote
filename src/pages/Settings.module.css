@@ -159,6 +159,7 @@
 
 /* About Section */
 .about {
+  position: relative;
   padding: var(--space-5);
   background-color: var(--color-surface);
   border-radius: var(--radius-md);
@@ -197,6 +198,28 @@
 .feature svg {
   flex-shrink: 0;
   color: var(--color-text-tertiary);
+}
+
+.githubIcon {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.githubIcon:hover {
+  color: var(--color-text);
+  border-color: var(--color-border-light);
 }
 
 /* Mobile */
